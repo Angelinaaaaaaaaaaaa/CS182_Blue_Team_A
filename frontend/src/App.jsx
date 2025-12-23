@@ -23,8 +23,11 @@ function App() {
       setLoading(true)
       setError(null)
 
+      // Use base URL for GitHub Pages compatibility
+      const baseUrl = import.meta.env.BASE_URL
+
       // Load main data with better error handling
-      const dataResponse = await fetch('/data/special_participation_a.json')
+      const dataResponse = await fetch(`${baseUrl}data/special_participation_a.json`)
       if (!dataResponse.ok) {
         throw new Error(`Failed to load data: ${dataResponse.status}`)
       }
@@ -33,7 +36,7 @@ function App() {
 
       // Load basic analytics (optional)
       try {
-        const analyticsResponse = await fetch('/data/analytics.json')
+        const analyticsResponse = await fetch(`${baseUrl}data/analytics.json`)
         if (analyticsResponse.ok) {
           const analyticsData = await analyticsResponse.json()
           setAnalytics(analyticsData)
@@ -44,7 +47,7 @@ function App() {
 
       // Load advanced analytics (optional)
       try {
-        const advancedResponse = await fetch('/data/advanced_analytics.json')
+        const advancedResponse = await fetch(`${baseUrl}data/advanced_analytics.json`)
         if (advancedResponse.ok) {
           const advancedData = await advancedResponse.json()
           setAdvancedAnalytics(advancedData)

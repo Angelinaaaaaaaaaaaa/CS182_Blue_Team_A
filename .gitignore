@@ -46,9 +46,3 @@ Thumbs.db
 .vscode/
 *.swp
 
-# =========================
-# Data outputs (optional)
-# Uncomment if you don't want to commit generated data
-# =========================
-# backend/data/*.json
-# backend/data/*.csv
