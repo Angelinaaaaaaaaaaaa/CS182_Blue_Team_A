@@ -187,6 +187,13 @@ class AnalyticsProcessor:
                     f"Most tested model: {top_model[0]} ({top_model[1]} posts)"
                 )
 
+                # Add top 3 models
+                top_3_models = sorted(valid_models.items(), key=lambda x: x[1], reverse=True)[:3]
+                model_names = ', '.join([f"{m[0]} ({m[1]})" for m in top_3_models])
+                insights["key_findings"].append(
+                    f"Top 3 models by testing frequency: {model_names}"
+                )
+
         # Most covered homework
         if stats['homeworks']:
             valid_hws = {k: v for k, v in stats['homeworks'].items() if k != 'Unknown'}
@@ -195,6 +202,16 @@ class AnalyticsProcessor:
                 insights["key_findings"].append(
                     f"Most covered assignment: {top_hw[0]} ({top_hw[1]} posts)"
                 )
+
+                # Add diversity metric
+                total_models_count = len(valid_models) if stats['models'] else 0
+                total_hw_count = len(valid_hws)
+                if advanced_analytics:
+                    total_combinations = advanced_analytics.get('statistics', {}).get('total_combinations', 0)
+                    coverage_pct = round((total_combinations / (total_models_count * total_hw_count) * 100), 1) if total_models_count * total_hw_count > 0 else 0
+                    insights["key_findings"].append(
+                        f"Coverage diversity: {total_combinations} unique HW×Model combinations ({coverage_pct}% of possible combinations)"
+                    )
 
         # Generate model-focused insights from advanced analytics
         if advanced_analytics:
@@ -262,8 +279,14 @@ class AnalyticsProcessor:
 
 def main():
     processor = AnalyticsProcessor()
+    # Use merged file with full content if available
+    input_path = "data/special_participation_a_merged.json"
+    if not os.path.exists(input_path):
+        print(f"Warning: {input_path} not found, using fallback...")
+        input_path = "data/special_participation_a.json"
+
     processor.process(
-        input_path="data/special_participation_a.json",
+        input_path=input_path,
         output_path="data/analytics.json",
         advanced_analytics_path="data/advanced_analytics.json"
     )

@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 )
 
-function Compare({ data, analytics }) {
+function Compare({ data, analytics: _analytics }) {
   const [selectedModel1, setSelectedModel1] = useState('')
   const [selectedModel2, setSelectedModel2] = useState('')
   const [selectedHomework, setSelectedHomework] = useState('all')

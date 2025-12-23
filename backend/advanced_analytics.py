@@ -11,12 +11,14 @@ from collections import Counter, defaultdict
 from typing import List, Dict, Any, Set
 from datetime import datetime
 import math
+from html.parser import HTMLParser
 
 
 class AdvancedAnalytics:
     """Advanced text analytics without requiring LLM APIs"""
 
     def __init__(self):
+        self.html_stripper = self._create_html_stripper()
         # Strength indicators (positive terms)
         self.strength_terms = {
             'correct', 'accurate', 'perfect', 'excellent', 'good', 'well', 'better',
@@ -54,8 +56,41 @@ class AdvancedAnalytics:
             'correct', 'gemini', 'reasoning', 'part', 'correctly', 'able', 'shot',
             'solution', 'step', 'solve', 'coding', 'first', 'overall', 'solutions',
             'prompt', 'non', 'parts', 'well', 'deepseek', 'chat', 'chatgpt', 'gpt',
-            'claude', 'llama', 'qwen', 'mistral', 'kimi', 'perplexity', 'grok'
+            'claude', 'llama', 'qwen', 'mistral', 'kimi', 'perplexity', 'grok',
+            # Additional terms to exclude based on user feedback
+            'special', 'participation', 'noncoding', 'thinking', 'pro', 'opus',
+            'sonnet', 'flash', 'extended', 'written', 'oss', 'alert', 'prof'
         }
+
+    def _create_html_stripper(self):
+        """Create a simple HTML tag stripper"""
+        class HTMLStripper(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.reset()
+                self.strict = False
+                self.convert_charrefs = True
+                self.text = []
+
+            def handle_data(self, d):
+                self.text.append(d)
+
+            def get_text(self):
+                return ''.join(self.text)
+
+        return HTMLStripper
+
+    def strip_html(self, html_text: str) -> str:
+        """Remove HTML tags from text"""
+        if not html_text:
+            return ""
+        stripper = self.html_stripper()
+        try:
+            stripper.feed(html_text)
+            return stripper.get_text()
+        except:
+            # Fallback to regex if HTML parsing fails
+            return re.sub(r'<[^>]+>', ' ', html_text)
 
     def tokenize(self, text: str) -> List[str]:
         """Simple tokenization"""
@@ -126,23 +161,46 @@ class AdvancedAnalytics:
         text_lower = text.lower()
         sentences = re.split(r'[.!?]+', text)
 
+        # Vague/generic phrases to filter out
+        vague_phrases = {
+            'one notable part', 'notable part', 'interaction was when',
+            'part of the interaction', 'overall', 'general', 'basically',
+            'it was', 'there was', 'seemed to', 'appeared to',
+            'might be', 'could be', 'would be', 'may be'
+        }
+
         strengths = []
         weaknesses = []
 
         for sentence in sentences:
             sentence_lower = sentence.lower()
             words = set(self.tokenize(sentence))
+            clean = sentence.strip()
+
+            # Skip if too short or too long
+            if not clean or len(clean) < 30 or len(clean) > 250:
+                continue
+
+            # Skip vague sentences
+            is_vague = any(phrase in sentence_lower for phrase in vague_phrases)
+            if is_vague:
+                continue
+
+            # Skip if sentence is just meta-commentary about the interaction
+            if any(meta in sentence_lower for meta in ['i thought', 'i found', 'it showed', 'it demonstrates']):
+                # Only skip if it doesn't have specific details (less than 50 chars of content)
+                if len(clean) < 60:
+                    continue
 
             # Check for strength indicators
             if words & self.strength_terms:
-                clean = sentence.strip()
-                if clean and len(clean) > 20:  # Ignore very short sentences
+                # Must have at least one concrete noun or specific detail
+                if len(words) >= 8:  # Require substantial content
                     strengths.append(clean[:200])  # Truncate long sentences
 
             # Check for weakness indicators
             if words & self.weakness_terms:
-                clean = sentence.strip()
-                if clean and len(clean) > 20:
+                if len(words) >= 8:  # Require substantial content
                     weaknesses.append(clean[:200])
 
         return {
@@ -155,8 +213,8 @@ class AdvancedAnalytics:
         if len(posts) <= max_clusters:
             return posts
 
-        # Compute TF-IDF for all posts
-        documents = [p.get('content', '') + ' ' + p.get('title', '') for p in posts]
+        # Compute TF-IDF for all posts (using titles since content is empty)
+        documents = [p.get('title', '') for p in posts]
         tfidf_scores = self.compute_tfidf(documents)
 
         # Find posts with most distinctive content (highest average TF-IDF)
@@ -177,8 +235,18 @@ class AdvancedAnalytics:
         if not posts:
             return {}
 
-        # Combine all text
-        all_text = ' '.join([p.get('content', '') for p in posts if p.get('content')])
+        # Combine all text from both title and content
+        all_text_parts = []
+        for p in posts:
+            # Add title
+            if p.get('title'):
+                all_text_parts.append(p.get('title'))
+            # Add content (strip HTML if present)
+            if p.get('content'):
+                clean_content = self.strip_html(p.get('content'))
+                all_text_parts.append(clean_content)
+
+        all_text = ' '.join(all_text_parts)
 
         # Compute TF-IDF for the group
         tokens = self.tokenize(all_text)
@@ -187,7 +255,7 @@ class AdvancedAnalytics:
         # Get top terms (without IDF for single group)
         top_terms = sorted(tf.items(), key=lambda x: x[1], reverse=True)[:15]
 
-        # Extract strengths and weaknesses
+        # Extract strengths and weaknesses from full text
         sw = self.extract_strengths_weaknesses(all_text)
 
         # Find representative posts
@@ -203,7 +271,7 @@ class AdvancedAnalytics:
                     'title': p.get('title', ''),
                     'author': p.get('author', ''),
                     'url': p.get('url', ''),
-                    'snippet': (p.get('content', '') or '')[:200] + '...'
+                    'snippet': p.get('title', '')  # Use title as snippet since content is empty
                 }
                 for p in representative[:3]
             ]
@@ -265,11 +333,18 @@ class AdvancedAnalytics:
         # Overall statistics
         total_combinations = sum(1 for hw in analysis for model in analysis[hw])
 
-        # Extract global top terms
-        all_posts_text = ' '.join([p.get('content', '') for p in data if p.get('content')])
+        # Extract global top terms from titles and content
+        all_posts_text_parts = []
+        for p in data:
+            if p.get('title'):
+                all_posts_text_parts.append(p.get('title'))
+            if p.get('content'):
+                clean_content = self.strip_html(p.get('content'))
+                all_posts_text_parts.append(clean_content)
+        all_posts_text = ' '.join(all_posts_text_parts)
         global_tokens = self.tokenize(all_posts_text)
         global_tf = self.compute_tf(global_tokens)
-        global_top_terms = sorted(global_tf.items(), key=lambda x: x[1], reverse=True)[:20]
+        global_top_terms = sorted(global_tf.items(), key=lambda x: x[1], reverse=True)[:30]
 
         return {
             'generated_at': datetime.now().isoformat(),
@@ -295,12 +370,15 @@ def main():
     print("CS182 Blue Team - Advanced Analytics")
     print("=" * 60)
 
-    # Load data
-    input_path = "data/special_participation_a.json"
+    # Load data - prefer merged file with full content
+    input_path = "data/special_participation_a_merged.json"
     if not os.path.exists(input_path):
-        print(f"Error: {input_path} not found!")
-        print("Please run scraper.py first.")
-        return
+        print(f"Warning: {input_path} not found, trying fallback...")
+        input_path = "data/special_participation_a.json"
+        if not os.path.exists(input_path):
+            print(f"Error: No data file found!")
+            print("Please run merge_settled_with_content.py first.")
+            return
 
     with open(input_path, 'r', encoding='utf-8') as f:
         data = json.load(f)

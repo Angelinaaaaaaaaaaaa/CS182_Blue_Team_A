@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-22T19:12:12.210676",
+  "generated_at": "2025-12-23T01:02:18.949703",
   "statistics": {
     "total_posts": 169,
     "total_authors": 168,
@@ -333,7 +333,9 @@
     "key_findings": [
       "Total of 169 posts from 168 unique contributors",
       "Most tested model: Gemini (25 posts)",
-      "Most covered assignment: HW8 (16 posts)"
+      "Top 3 models by testing frequency: Gemini (25), DeepSeek (13), Mistral (13)",
+      "Most covered assignment: HW8 (16 posts)",
+      "Coverage diversity: 148 unique HW×Model combinations (44.0% of possible combinations)"
     ],
     "model_comparison": {
       "GPT-5.1-Thinking": {
@@ -359,22 +361,22 @@
         ],
         "weaknesses": [
           "It gave me some generic answers, showing it was inferring what could be in the notebook based on the setup of the question, but upon further probing it admitted to me that it cannot see its contents",
-          "Here is a breakdown of my interactions with each question:\n\nQuestion 1: Added some additional logic referring to the homogeneous error dynamic",
+          "Here is a breakdown of my interactions with each question:Question 1: Added some additional logic referring to the homogeneous error dynamic",
           "Question 2c also was missing some logic that made it difficult for me to follow along",
           "For high-level conceptual questions (example difficulty, why early exit helps, what hooks do, when to use early exit vs a smaller model): It also mostly one-shotted reasonable, coherent answers",
-          "A few consistent failure modes showed up: Over-confidence on unknown experiment outputs, Numeric details from papers , Flattening subtle distinctions\n\nHere are the strategies that seemed to work best "
+          "A few consistent failure modes showed up: Over-confidence on unknown experiment outputs, Numeric details from papers , Flattening subtle distinctionsHere are the strategies that seemed to work best to"
         ],
         "distinctive_terms": [
-          "quite",
-          "com",
-          "assignment",
-          "additional",
-          "decoder",
-          "surprised",
-          "math",
+          "encoder",
+          "them",
+          "often",
+          "thought",
+          "soft",
+          "though",
+          "staff",
           "attached",
-          "told",
-          "circular"
+          "complexity",
+          "com"
         ],
         "summary": "Tested on 10 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -390,29 +392,29 @@
         "total_homeworks": 6,
         "strengths": [
           "The model has strong conceptual understanding but struggles with notation conventions, sign errors in signal processing, and tracking how multiple scaling factors interact",
-          "Detailed Findings by Problem\n\nProblem 1: Newton-Schulz Runtime (with minor prompting)\n\nWhat happened:\n\nThe model correctly identified the two dominant matrix multiplications and their complexity\n\nIssu",
+          "Detailed Findings by ProblemProblem 1: Newton-Schulz Runtime (with minor prompting)What happened:The model correctly identified the two dominant matrix multiplications and their complexityIssue: Defau",
           "The model occasionally solved subproblems correctly on the first try, especially when the math followed familiar patterns (e",
           "5 solved all of the problems on the first attempt, and although some of its explanations were a bit verbose, its answers were consistently correct and well-grounded",
           "Some explanations could have been more detailed"
         ],
         "weaknesses": [
           "This post documents my observations and an analysis of where the model succeeded and failed",
-          "Detailed Findings by Problem\n\nProblem 1: Newton-Schulz Runtime (with minor prompting)\n\nWhat happened:\n\nThe model correctly identified the two dominant matrix multiplications and their complexity\n\nIssu",
+          "Detailed Findings by ProblemProblem 1: Newton-Schulz Runtime (with minor prompting)What happened:The model correctly identified the two dominant matrix multiplications and their complexityIssue: Defau",
           "Part d required a minor fix, while part e was a major struggle",
           "Part g was initially wrong, but was fixed correctly after fixing part e",
-          "Attempt 1: Model got α = √n_out (missing √n_in factor)\n\nAttempt 2: After prompting \"your answer is incorrect,\" still got √n_out\n\nAttempt 3: I asked \"where are you losing the √n_in"
+          "Attempt 1: Model got α = √n_out (missing √n_in factor)Attempt 2: After prompting \"your answer is incorrect,\" still got √n_outAttempt 3: I asked \"where are you losing the √n_in"
         ],
         "distinctive_terms": [
-          "quite",
-          "written",
+          "often",
+          "multiple",
+          "even",
+          "https",
+          "attempt",
           "comments",
-          "correlation",
-          "error",
-          "specific",
-          "below",
           "basic",
-          "provided",
-          "share"
+          "conditions",
+          "pdf",
+          "wise"
         ],
         "summary": "Tested on 6 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -431,7 +433,7 @@
         ],
         "total_homeworks": 10,
         "strengths": [
-          "Executive Summary:\n\nI used Grok to complete the written portion of Homework #4",
+          "Special Participation A: Grok on HW4 Executive Summary:I used Grok to complete the written portion of Homework #4",
           "Grok got the same answer as indicated by previous Special Participation A posts focusing on this problem set, and when I asked the model to evaluate whether the key’s current solution is reasonable, i",
           "5V)”) appeared to be accurate throughout",
           "It was particularly strong in analyzing the computational complexity, correctly identifying the reduction from quadratic O(N2) to linear O(N) by leveraging the recursive cumulative sum trick",
@@ -439,22 +441,22 @@
         ],
         "weaknesses": [
           "For some problems, such as Problem #3 part d and Problem #4 part f, Grok presents work towards one solution and then indicates that it has changed its mind, says the previous work is incorrect, and su",
-          "It provided correct facts as needed for the question/\n\nQuestion 3: Example Difficulty (Notebook Analysis) This was the most revealing interaction",
+          "It provided correct facts as needed for the question/Question 3: Example Difficulty (Notebook Analysis) This was the most revealing interaction",
           "It abandoned its generic answers and provided a more accurate analysis of the bimodal exit distributions and the specific geometric properties (elongation/noise) that caused difficulty",
           "However, it exhibited a tendency to \"coast\" on general knowledge when specific data was missing (as seen in the notebook section)",
           "The main issue I saw was in complexity analysis: in a few places it mixed up total work vs"
         ],
         "distinctive_terms": [
-          "mathematical",
-          "results",
-          "written",
-          "free",
-          "required",
+          "proofs",
           "official",
-          "theoretical",
-          "specific",
-          "learning",
-          "notebook"
+          "time",
+          "address",
+          "vib",
+          "performance",
+          "providing",
+          "algebraic",
+          "satisfactory",
+          "pdf"
         ],
         "summary": "Tested on 10 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -466,9 +468,10 @@
           "HW4",
           "HW5",
           "HW6",
+          "HW8",
           "HW9"
         ],
-        "total_homeworks": 7,
+        "total_homeworks": 8,
         "strengths": [
           "Summary: It was quite good at one-shotting all problems, even with just one prompt - except a numerical problem, for which it (incorrectly) used python code to generate a matrix",
           "However, it wasn't perfect",
@@ -484,18 +487,18 @@
           "Once I explicitly asked about the missing constant term, it corrected itself immediately, so this was not a hallucination but more so like falling back on a common default kernel definition"
         ],
         "distinctive_terms": [
-          "quite",
-          "written",
-          "parsing",
-          "good",
-          "general",
-          "main",
-          "followed",
-          "while",
-          "about",
-          "evaluate"
+          "explaining",
+          "small",
+          "ability",
+          "even",
+          "text",
+          "powerful",
+          "time",
+          "input",
+          "penalty",
+          "ambiguities"
         ],
-        "summary": "Tested on 7 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
+        "summary": "Tested on 8 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
       "DeepSeek": {
         "homeworks_tested": [
@@ -515,7 +518,7 @@
         ],
         "total_homeworks": 13,
         "strengths": [
-          "In this experiment:\n\nDeepSeek solved four out of five questions correctly in a single attempt",
+          "In this experiment:DeepSeek solved four out of five questions correctly in a single attempt",
           "Question 3 required a brief nudge from me to complete the final computation, likely because the context limit was reached mid-session",
           "With images or PDFs, it demonstrated significant better context retention and reasoning continuity",
           "A hybrid approach (text +images) also performed better",
@@ -524,21 +527,21 @@
         "weaknesses": [
           "Question 2 was the only one it got wrong, though it could solve it with further prompting",
           "it sometimes failed to connect earlier parts of the questions or instructions",
-          "I don't know whether it can be called \"hallucination\", but actually in the thinking content, it indeed notices this task but considers 4(a) internally without giving the solution: \n\n3",
+          "I don't know whether it can be called \"hallucination\", but actually in the thinking content, it indeed notices this task but considers 4(a) internally without giving the solution: 3",
           "This problem fails the COT(Chain of Thought) if the assumption is not expected, leading to the wrong answer",
           "Its conversational and correction capabilities are adequate, but its error-localization ability is weak"
         ],
         "distinctive_terms": [
-          "utilized",
-          "mathematical",
-          "com",
-          "written",
-          "error",
-          "capabilities",
-          "work",
-          "derives",
-          "check",
-          "link"
+          "long",
+          "calculation",
+          "them",
+          "interact",
+          "context",
+          "file",
+          "thus",
+          "often",
+          "understanding",
+          "text"
         ],
         "summary": "Tested on 13 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -571,19 +574,19 @@
           "Based on past interactions with LLMs, my experience was that LLMs lack the ability to provide insight/ intuition into mathematical problems and tend to focus on just deriving answers (that are even fr",
           "The only issues were minor misinterpretations of the problem statement (notably, the interpretation of the error factor in 1b)",
           "One issue: Gemini tended to forget that it was solving problems from the provided document, sometimes coming up with its own problem to solve",
-          "Hallucinations & Accuracy\n\nHallucination Rate: 0%"
+          "Step 3: If the answer was incorrect, provide hints to guide Gemini to fix the original answer, and repeat until the response was correct or it seems to have no chance of fixing it"
         ],
         "distinctive_terms": [
-          "mistake",
-          "noticed",
-          "quite",
-          "mathematical",
-          "theoretical",
+          "mathbf",
+          "often",
+          "visual",
           "official",
-          "struggled",
-          "learning",
           "interaction",
-          "math"
+          "didn",
+          "even",
+          "time",
+          "mistakes",
+          "though"
         ],
         "summary": "Tested on 13 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -603,8 +606,8 @@
         "total_homeworks": 10,
         "strengths": [
           "Despite this, Qwen did a pretty good job on this homework especially considering how difficult it is",
-          "Annotations:\n\nThe model was able to get Questions 1 and 2 right really quickly with only 1 attempt each",
-          "Question 3b): model got it right very quickly \n\nQuestion 3c): reasoning is right, the model was able to identify that the final graph should have a U-shape",
+          "Annotations:The model was able to get Questions 1 and 2 right really quickly with only 1 attempt each",
+          "Question 3b): model got it right very quickly Question 3c): reasoning is right, the model was able to identify that the final graph should have a U-shape",
           "The reasoning process was right but it couldn't analyze the graphs correctly still",
           "After the image reuploading step, model was able to perform the right analysis and output the right answers"
         ],
@@ -616,16 +619,16 @@
           "After the incorrect portion was pointed out, the model did a good job refocusing on that specific portion and fixing the issue, whether it was a mathematical error or a conceptual one"
         ],
         "distinctive_terms": [
-          "noticed",
-          "written",
-          "three",
-          "especially",
-          "itself",
-          "good",
-          "math",
-          "find",
-          "reason",
-          "correction"
+          "proofs",
+          "context",
+          "times",
+          "often",
+          "https",
+          "mistakes",
+          "giving",
+          "highlights",
+          "pdf",
+          "reason"
         ],
         "summary": "Tested on 10 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -642,28 +645,28 @@
         "strengths": [
           "GPT-5 generates accurate answers for conceptual and computation questions",
           "Some questions also required some further prompting, though generally one-shot is quite accurate",
-          "com/share/6938f111-c4b4-800d-90fd-000f7b0fa644\n\nQuestion (2): ChatGPT solved this question without too much difficulty",
-          "Here was the 3(a) ASCII diagram and annotated chatlog PDF:\n\n\n\nEDIT: Attached a better PDF",
-          "1: Maximal Update Parameterization: \n\nSuccessfully one shotted, reasoning good"
+          "com/share/6938f111-c4b4-800d-90fd-000f7b0fa644Question (2): ChatGPT solved this question without too much difficulty",
+          "Here was the 3(a) ASCII diagram and annotated chatlog PDF:EDIT: Attached a better PDF",
+          "1: Maximal Update Parameterization: Successfully one shotted, reasoning good"
         ],
         "weaknesses": [
-          "com/share/6938f111-c4b4-800d-90fd-000f7b0fa644\n\nQuestion (2): ChatGPT solved this question without too much difficulty",
+          "com/share/6938f111-c4b4-800d-90fd-000f7b0fa644Question (2): ChatGPT solved this question without too much difficulty",
           "Question (5)(a)-(b): ChatGPT actually failed to solve this one at first, having \"forgotten\" Homework 12's full contents",
-          "It defined it as if the matrix was unrolled into a vector and then the RMS norm of that flattened vector was taken, \n\n$$\\frac{\\left\\lVert W\\right\\rVert_F}{\\sqrt{n_{l-1}n_l}}$$\n\nAs a result, it used th",
+          "It defined it as if the matrix was unrolled into a vector and then the RMS norm of that flattened vector was taken, \\frac{\\left\\lVert W\\right\\rVert_F}{\\sqrt{n_{l-1}n_l}}As a result, it used this relat",
           "While it made this error, ChatGPT 5 was still able to correctly derive the upper bounds in Desideratum 1 (because it didn't use the RMS norms of hidden layer vector/update or weight matrix/update for ",
           "I also attempted to input an incorrect answer into it about orthogonal initialization in RNNs guaranteeing non-vanishing gradients"
         ],
         "distinctive_terms": [
-          "accurate",
-          "dropout",
-          "com",
-          "diagram",
-          "below",
           "file",
-          "about",
+          "post",
+          "generates",
+          "https",
+          "think",
           "layer",
-          "sometimes",
-          "rms"
+          "understand",
+          "accurate",
+          "aspired",
+          "pdf"
         ],
         "summary": "Tested on 6 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -699,16 +702,16 @@
           "For convolutions, it was using the deep learning convention where the kernel is already flipped, so it was getting incorrect signage, but then it fixed this when I clarified convention"
         ],
         "distinctive_terms": [
-          "calculations",
-          "reference",
-          "something",
-          "written",
-          "explain",
-          "work",
-          "complete",
-          "link",
+          "history",
+          "mostly",
+          "even",
+          "https",
+          "mistakes",
+          "portion",
+          "time",
           "staff",
-          "relu"
+          "trace",
+          "pedagogical"
         ],
         "summary": "Tested on 13 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -722,30 +725,30 @@
         ],
         "total_homeworks": 5,
         "strengths": [
-          "Mathematical Rigor & Reasoning:\n\nUnlike some LLMs that skip steps or hallucinate intermediate lines to reach a \"known\" answer, Kimi k2 provided complete, step-by-step derivations",
+          "Mathematical Rigor & Reasoning:Unlike some LLMs that skip steps or hallucinate intermediate lines to reach a \"known\" answer, Kimi k2 provided complete, step-by-step derivations",
           "The output indicates Kimi has good intuition and is able to reason about and handle the gradient operations well, regularly providing interpretations for steps",
-          "Overall Performance Summary\n\nAcross the entire HW11 interaction, KIMI K2 demonstrated strong reasoning ability and consistently produced correct answers for nearly all questions",
+          "Overall Performance SummaryAcross the entire HW11 interaction, KIMI K2 demonstrated strong reasoning ability and consistently produced correct answers for nearly all questions",
           "The second part of this question was also answered correctly, with the model coming up with the right changes to the code necessary for making the adjustment the question asked for",
           "Question 6: The question got some of the parts right, but had some minor differences in other parts"
         ],
         "weaknesses": [
-          "Mathematical Rigor & Reasoning:\n\nUnlike some LLMs that skip steps or hallucinate intermediate lines to reach a \"known\" answer, Kimi k2 provided complete, step-by-step derivations",
-          "OCR Errors on Matrix Inputs\n\nIn Question 2(c)(ii), KIMI K2 misinterpreted the matrix due to incorrect OCR parsing",
-          "Misinterpretation of Ambiguous Prompts\n\nIn Questions 5(c)(d), the model initially used formulas from part (b) instead of the simplified Chinchilla-optimal rules required for the question, leading to a",
-          "Hallucinations & Accuracy\n\nHallucination Rate: 0%",
-          "All mistakes were due to OCR error or misinterpreting the prompt’s intended formula"
+          "Mathematical Rigor & Reasoning:Unlike some LLMs that skip steps or hallucinate intermediate lines to reach a \"known\" answer, Kimi k2 provided complete, step-by-step derivations",
+          "OCR Errors on Matrix InputsIn Question 2(c)(ii), KIMI K2 misinterpreted the matrix due to incorrect OCR parsing",
+          "Misinterpretation of Ambiguous PromptsIn Questions 5(c)(d), the model initially used formulas from part (b) instead of the simplified Chinchilla-optimal rules required for the question, leading to an ",
+          "All mistakes were due to OCR error or misinterpreting the prompt’s intended formula",
+          "It was able to one-shot the vast majority of the questions, and with simple prompting about its motivations on the incorrect questions, it was able to generate the correct solutions"
         ],
         "distinctive_terms": [
-          "assignment",
-          "theoretical",
-          "minimal",
-          "indicated",
-          "blank",
-          "corrections",
+          "answered",
           "stability",
-          "handle",
-          "involved",
-          "interpretability"
+          "even",
+          "giving",
+          "zero",
+          "observed",
+          "errors",
+          "complexity",
+          "corrections",
+          "blank"
         ],
         "summary": "Tested on 5 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -760,30 +763,30 @@
         ],
         "total_homeworks": 6,
         "strengths": [
-          "com/share/f3019ef7b48e\n\nAnnotated: \n\n\nSummary: Gemini Pro initially had issues when asked to complete the entire homework when given a pdf file of the questions",
+          "com/share/f3019ef7b48eAnnotated: Summary: Gemini Pro initially had issues when asked to complete the entire homework when given a pdf file of the questions",
           "Even in places where the answer key did not explain (Q5 distributed training), Gemini had a clear way to arrive at the answers",
           "However, for the second question on the FaceNet paper, Gemini oneshots it and provides detailed and accurate responses to all the questions that match the provided solutions",
           "Summarization and querying key details from dense articles and papers appears to be its strength because it generates answers fairly quickly and with high accuracy; questions that are a little bit mor",
-          "Positives (What Worked Well):\n\nOne-shot on standard rewrites: Correctly gave correct answers straight from around 30% of the questions\n\nRight methodology even when imperfect: When wrong/incomplete, it"
+          "” Good for catching subtle mistakes and forcing a counterexample or fix"
         ],
         "weaknesses": [
           "Summary: Gemini 3 is one of the models for math questions and it doesn't disappoint, every procedure was at least acceptable, understandable and most important correct (doesn't hallucinate with these ",
           "Check Gemini’s output against my derivation; ask for clarifications or for the missing step",
           "Inconsistent symbols at times, likely from generic training patterns; needs nudging to match the homework question’s notation",
-          "Positives (What Worked Well):\n\nOne-shot on standard rewrites: Correctly gave correct answers straight from around 30% of the questions\n\nRight methodology even when imperfect: When wrong/incomplete, it",
+          "Positives (What Worked Well):One-shot on standard rewrites: Correctly gave correct answers straight from around 30% of the questionsRight methodology even when imperfect: When wrong/incomplete, it sti",
           "All qualitative answers and intuitive understandings were reasonable and correct, the mathematical calculations were error-free, and for the few proof-based questions, it provided sufficient formula s"
         ],
         "distinctive_terms": [
-          "mathematical",
-          "written",
-          "everything",
-          "symbols",
-          "analogy",
-          "check",
-          "particular",
-          "provided",
-          "about",
-          "doesn"
+          "asking",
+          "instead",
+          "started",
+          "even",
+          "https",
+          "notation",
+          "time",
+          "lot",
+          "pdf",
+          "about"
         ],
         "summary": "Tested on 6 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -792,10 +795,10 @@
           "HW0",
           "HW1",
           "HW10",
+          "HW11",
           "HW7",
           "HW8",
-          "HW9",
-          "Unknown"
+          "HW9"
         ],
         "total_homeworks": 7,
         "strengths": [
@@ -803,26 +806,26 @@
           "2 (DeepThink) solved all the problems with perfect accuracy and clear chain-of-thought reasoning",
           "I provided 2 nudges to hint DeepSeek towards the right direction, and only after these prompts did DeepSeek converge to the correct big O solution",
           "Through this example I saw that while DeepSeek can correct mistakes when guided, it is not as strong at independently identifying these issues",
-          "Strengths:\n\nAble to parse matrix expressions, SSM equations, multi-step derivations, and more complex sets of symbols\n\nConsistently one shotted problems on the first attempt\n\nAlgebraic Reasoning was s"
+          "Always show your complete reasoning process"
         ],
         "weaknesses": [
           "One interesting point was that DeepSeek struggled significantly with Problem 1(c), where it repeatedly overlooked/ignored the parallel computation model needed for the solution",
-          "Strengths:\n\nAble to parse matrix expressions, SSM equations, multi-step derivations, and more complex sets of symbols\n\nConsistently one shotted problems on the first attempt\n\nAlgebraic Reasoning was s",
+          "Strengths:Able to parse matrix expressions, SSM equations, multi-step derivations, and more complex sets of symbolsConsistently one shotted problems on the first attemptAlgebraic Reasoning was strongD",
           "The omissions did not lead to incorrect results, so this might indicate the model’s tendency to compress reasoning as output length increases",
           "This is evident in Question 5(d), where the model initially provided a condensed, arguably incomplete answer and required an explicit user prompt (\"This solution is not correct\") to force it to re-der",
-          "Other interesting observations:\n\nI found that asking it to restate the problem was very helpful in preventing hallucinations, as I could easily verify any small errors like wrong superscripts or notat"
+          "Other interesting observations:I found that asking it to restate the problem was very helpful in preventing hallucinations, as I could easily verify any small errors like wrong superscripts or notatio"
         ],
         "distinctive_terms": [
-          "format",
-          "com",
-          "assignment",
-          "struggled",
+          "option",
+          "newly",
+          "type",
+          "even",
+          "chinese",
+          "https",
+          "attempt",
+          "think",
           "repeatedly",
-          "work",
-          "reason",
-          "link",
-          "web",
-          "ignored"
+          "mode"
         ],
         "summary": "Tested on 7 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -840,23 +843,22 @@
           "I actually found myself better understanding some of the time and space-complexity arguments around attention mechanisms when trying to guide Gemma to the right solution"
         ],
         "weaknesses": [
-          "The transcript of my interactions are outlined in the PDF:\n\n(Note that a stylized export of the PDF is not possible due to the limitations of OpenWebUI's export capabilities for very long chats, howev",
+          "The transcript of my interactions are outlined in the PDF:(Note that a stylized export of the PDF is not possible due to the limitations of OpenWebUI's export capabilities for very long chats, however",
           "In particular, a massive pitfall of the model is that it appears to not be able to parse PDF files with math very well, and the model repeatedly got the wrong mapping from problem numbers/letters to t",
           "Gemma's strong explanations (when correct) make it a particularly helpful learning tool, even when it gets some problems wrong",
           "However, even when it produced incorrect bounds or incorrect tensor shapes, it often identified the correct overall strategy, so using Gemma can still be instructive",
           "After many failed attempts and struggling through problems 4f, 4g, and 6, Gemma seemed to exhibit an emergent pattern resembling human frustration"
         ],
         "distinctive_terms": [
-          "rather",
-          "written",
-          "produced",
-          "algebra",
-          "explanations",
-          "however",
-          "gemma",
-          "worked",
           "pdf",
-          "particular"
+          "worked",
+          "produced",
+          "rather",
+          "algebra",
+          "however",
+          "strong",
+          "explanations",
+          "gemma"
         ],
         "summary": "Tested on 2 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -873,27 +875,27 @@
           "Overall, ChatGPT achieved fully correct answers for all problems, demonstrating strong mathematical reasoning and consistency across sequential tasks",
           "This error propagated through subsequent parts, showing that ChatGPT solved sequentially, building upon its previous reasoning",
           "Once provided with a hint, it immediately corrected the mistake—illustrating that the model is particularly strong at conditional reasoning with scaffolding",
-          ")\n\nProduced clear step-by-step reasoning with limited guidance\n\nHandled numerical examples and matrix calculations well\n\nAble to refine and reorganize its thoughts effectively when prompted\n\nWeaknesse",
+          ")Produced clear step-by-step reasoning with limited guidanceHandled numerical examples and matrix calculations wellAble to refine and reorganize its thoughts effectively when promptedWeaknesses:Had di",
           "One thing that stood out was how consistently the model could jump straight into the right structure of the problem"
         ],
         "weaknesses": [
           "Nevertheless, this resulted in only one error out of seven big problems",
           "This error propagated through subsequent parts, showing that ChatGPT solved sequentially, building upon its previous reasoning",
-          ")\n\nProduced clear step-by-step reasoning with limited guidance\n\nHandled numerical examples and matrix calculations well\n\nAble to refine and reorganize its thoughts effectively when prompted\n\nWeaknesse",
+          ")Produced clear step-by-step reasoning with limited guidanceHandled numerical examples and matrix calculations wellAble to refine and reorganize its thoughts effectively when promptedWeaknesses:Had di",
           "Red annotations / highlights indicate that the response was incorrect",
           "The main issue came up in Question 6"
         ],
         "distinctive_terms": [
-          "matched",
-          "results",
-          "indicate",
           "contained",
+          "prompted",
+          "didn",
           "staff",
+          "linear",
+          "strengths",
           "verdict",
-          "sometimes",
-          "graph",
-          "explanations",
-          "conceptual"
+          "matched",
+          "attaching",
+          "derivations"
         ],
         "summary": "Tested on 5 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -909,7 +911,7 @@
         ],
         "total_homeworks": 7,
         "strengths": [
-          "Claude demonstrates strong mathematical reasoning capabilities and correctly derived analytical solutions without any mathematical hallucinations or false claims",
+          "Special Participation A: Claude on HW2 written part Claude demonstrates strong mathematical reasoning capabilities and correctly derived analytical solutions without any mathematical hallucinations or",
           "My main goal was to see (1) how accurate it is, (2) how stable its reasoning is, and (3) how much I need to steer it to get the right answer",
           "It got everything right on the first try and produced clean, well-structured derivations without me having to nudge it much",
           "Most of the arguments it made are consistent with the right solution especially when the questions are fairly straightforward",
@@ -922,16 +924,16 @@
           ", suggesting multiple practical strategies for missing-feature handling), those additions were still consistent with standard GNN practice"
         ],
         "distinctive_terms": [
-          "accurate",
-          "mathematical",
-          "written",
-          "demonstrates",
+          "spoiler",
+          "guidance",
+          "help",
+          "mostly",
           "capabilities",
-          "script",
-          "handling",
-          "missing",
-          "below",
-          "opus"
+          "accurate",
+          "fully",
+          "attached",
+          "any",
+          "included"
         ],
         "summary": "Tested on 7 homework(s); Strengths noted in 5 instances; Weaknesses noted in 4 instances"
       },
@@ -952,16 +954,16 @@
           "I liked how it listed all the assumptions it made which can help in cases where it is incorrect"
         ],
         "distinctive_terms": [
+          "engage",
+          "boring",
+          "here",
+          "conversation",
+          "experience",
           "vector",
           "interactively",
           "showed",
-          "engage",
           "blog",
-          "conversation",
-          "paper",
-          "special",
-          "participation",
-          "here"
+          "paper"
         ],
         "summary": "Tested on 2 homework(s); Strengths noted in 2 instances; Weaknesses noted in 4 instances"
       },
@@ -984,22 +986,22 @@
         ],
         "weaknesses": [
           "It was able to one-shot the conceptual questions (Q4) but failed the math (Q1) and the paper reading (Q5) until I stepped in to correct it",
-          "But, it learned from its mistakes (in Q1b)\n\nAfter I corrected the complexity error in Part A, we moved on to Part B (Causal Masking)",
-          "It hallucinates data tables (Q5 - FaceNet Paper)\n\nThis was the biggest failure mode",
-          "It outperformed the solution key on design (Q4 - Example Difficulty)\n\nOn the flip side, the model excelled at the \"Early Exit\" conceptual questions",
+          "But, it learned from its mistakes (in Q1b)After I corrected the complexity error in Part A, we moved on to Part B (Causal Masking)",
+          "It hallucinates data tables (Q5 - FaceNet Paper)This was the biggest failure mode",
+          "It outperformed the solution key on design (Q4 - Example Difficulty)On the flip side, the model excelled at the \"Early Exit\" conceptual questions",
           "It struggled to properly use the input size variable in its final answer"
         ],
         "distinctive_terms": [
-          "mathematical",
-          "image",
-          "helpful",
           "long",
-          "right",
-          "deep",
-          "solving",
-          "paper",
+          "them",
+          "instead",
+          "data",
+          "time",
+          "wrong",
+          "understand",
           "intuition",
-          "conceptual"
+          "trying",
+          "complexity"
         ],
         "summary": "Tested on 6 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -1023,23 +1025,23 @@
           "So it can get to the right answer, but sometimes needs prompting to avoid shallow intuition"
         ],
         "weaknesses": [
-          "Problem 3\n\nThis was where Claude struggled the most",
+          "Problem 3This was where Claude struggled the most",
           "But when we got into the beta values and how they map to the latent plots, it started with the wrong intuition, saying small beta should make the latent “spread more",
           "I expected it to struggle with deep chains of algebra, and the occasional numerical calculation, but it did very well",
           "It organized its thoughts well, answered each question thoroughly, and required a minimal hint to converge at the correct answer in the single case where it was incorrect",
           "The one failure was Q3c(iii), where Claude had to write update equations for specific nodes in a graph"
         ],
         "distinctive_terms": [
-          "dropout",
-          "mathematical",
-          "general",
-          "work",
-          "attached",
-          "normalization",
-          "staff",
-          "opus",
           "file",
-          "prompting"
+          "experience",
+          "surprisingly",
+          "didn",
+          "https",
+          "explanation",
+          "generated",
+          "staff",
+          "wrong",
+          "normalization"
         ],
         "summary": "Tested on 8 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -1051,7 +1053,7 @@
         "strengths": [
           "The interaction felt less like getting final answers from an oracle and more like supervising a strong but occasionally overconfident collaborator who needs spot checks on nontrivial linear-algebra st",
           "Overall, for this session the LLM “one-shot” most sub-questions, but required human skepticism and targeted follow-up prompts to avoid accepting a superficially impressive but wrong derivation",
-          "Problem 1: SSM Convolution Kernel\n\nParts (a)–(e): One-Shot Success\n\n(a) Convolution kernel derivation: It correctly unrolled the SSM, derived xk​=∑ℓ=0k−1​AℓBuk−1−ℓ​, substituted into yk​, and reindexe",
+          "Problem 1: SSM Convolution KernelParts (a)–(e): One-Shot Success(a) Convolution kernel derivation: It correctly unrolled the SSM, derived xk​=∑ℓ=0k−1​AℓBuk−1−ℓ​, substituted into yk​, and reindexed to",
           "Behavior: Good at routine linear algebra, explicit about missing details / assumptions rather than hallucinating them as facts",
           "For these parts, the LLM essentially “one-shot” the derivations and got both the algebra and the qualitative interpretations right"
         ],
@@ -1063,11 +1065,11 @@
           "This setup was intentionally “light-touch”: I wanted to see how far it could get without heavy-handed scaffolding, and then whether human pressure could rescue it from a bad initial derivation"
         ],
         "distinctive_terms": [
-          "complexity",
-          "ridge",
           "derivation",
-          "kernel",
-          "linear"
+          "ridge",
+          "complexity",
+          "linear",
+          "kernel"
         ],
         "summary": "Tested on 1 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -1078,7 +1080,7 @@
         ],
         "total_homeworks": 2,
         "strengths": [
-          "Gemini Flash demonstrated a perfect one-shot performance on the non-coding written portions of Homework 12",
+          "Special Participation A: Gemini Flash on HW12 Gemini Flash demonstrated a perfect one-shot performance on the non-coding written portions of Homework 12",
           "The model exhibited strong domain knowledge about deep learning, specifically in Transformer initialization stability, KL Divergence, and Variational Information Bottlenecks",
           "Analysis: The model starts off a bit slow on the very first question (about ideas to adjust LoRA to get better performance)",
           "The solutions given by the model are arguably better than the actual HW solutions in some cases",
@@ -1092,16 +1094,16 @@
           "Even when re-prompted with the context again (just in case this was the cause once again, as with 6a), it got them wrong"
         ],
         "distinctive_terms": [
-          "about",
-          "interpreted",
-          "performance",
           "deep",
-          "then",
-          "learning",
-          "told",
-          "better",
+          "interpreted",
+          "context",
           "visual",
-          "context"
+          "about",
+          "told",
+          "learning",
+          "then",
+          "performance",
+          "better"
         ],
         "summary": "Tested on 2 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
       },
@@ -1118,7 +1120,7 @@
           "Despite these issues, Kimi’s conceptual explanations were clear, and with careful prompting and oversight, it was able to provide correct results",
           "In short, Kimi is helpful as long as you guide it closely and verify its reasoning, but it is not reliable for detailed, step-by-step mathematical work without supervision",
           "However, in reasoning through the problems, the model sometimes made logical leaps that, while correct, were not sufficiently justified in my opinion",
-          "(For context in the below equation, $\\hat{X} = W_2 W_1 X$)\n\nMeanwhile, the staff solution is much more thorough, walking us through every step of the derivation and explicitly citing the matrix calcul"
+          "(For context in the below equation, $\\hat{X} = W_2 W_1 X$)Meanwhile, the staff solution is much more thorough, walking us through every step of the derivation and explicitly citing the matrix calculus"
         ],
         "weaknesses": [
           "I only attempted to steer the model when it gave a clearly incorrect answer or when its response diverged significantly from the staff solution",
@@ -1128,18 +1130,38 @@
           "Furthermore, when I gave it a URL containing the information needed to answer the question correctly, it again answered the question wrong"
         ],
         "distinctive_terms": [
+          "ability",
           "staff",
-          "while",
-          "included",
-          "about",
           "blog",
-          "above",
-          "architectures",
-          "because",
+          "included",
+          "user",
           "useful",
-          "performance"
+          "about",
+          "several",
+          "gnn",
+          "because"
         ],
         "summary": "Tested on 4 homework(s); Strengths noted in 5 instances; Weaknesses noted in 5 instances"
+      },
+      "Opus-4.5": {
+        "homeworks_tested": [
+          "HW11"
+        ],
+        "total_homeworks": 1,
+        "strengths": [
+          "However, when I gave the LLM the entire problem, it seemed to actually do better than when I would previously give it small parts of the question and continuously ask questions"
+        ],
+        "weaknesses": [
+          "However, for some questions the model made small mistakes such as incorrect assumptions about the GPU"
+        ],
+        "distinctive_terms": [
+          "clearly",
+          "want",
+          "subparts",
+          "screenshots",
+          "llm"
+        ],
+        "summary": "Tested on 1 homework(s); Strengths noted in 1 instances; Weaknesses noted in 1 instances"
       },
       "Llama": {
         "homeworks_tested": [
@@ -1152,10 +1174,10 @@
         ],
         "distinctive_terms": [
           "calculation",
-          "performed",
-          "fermi",
           "pdf",
-          "context"
+          "context",
+          "performed",
+          "fermi"
         ],
         "summary": "Tested on 1 homework(s); Weaknesses noted in 1 instances"
       },
@@ -1171,16 +1193,16 @@
         ],
         "weaknesses": [],
         "distinctive_terms": [
-          "high",
-          "derivations",
-          "performance",
-          "oss",
-          "analytical",
+          "good",
           "fast",
-          "special",
-          "participation",
-          "thinking",
-          "surprisingly"
+          "derivations",
+          "high",
+          "symbolic",
+          "surprisingly",
+          "analytical",
+          "conceptual",
+          "performance",
+          "open"
         ],
         "summary": "Tested on 2 homework(s); Strengths noted in 2 instances"
       }

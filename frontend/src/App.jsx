@@ -65,7 +65,7 @@ function App() {
     dashboard: <Dashboard data={data} analytics={analytics} advancedAnalytics={advancedAnalytics} />,
     browse: <Browse data={data} />,
     analytics: <Analytics data={data} analytics={analytics} />,
-    insights: <Insights data={data} advancedAnalytics={advancedAnalytics} />
+    insights: <Insights data={data} advancedAnalytics={advancedAnalytics} analytics={analytics} />
   }
 
   if (loading) {
