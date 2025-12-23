@@ -1,0 +1,253 @@
+{
+  "generated_at": "2025-12-21T19:07:03.500819",
+  "statistics": {
+    "total_posts": 169,
+    "total_authors": 168,
+    "models": {
+      "Unknown": 83,
+      "Gemini": 25,
+      "ChatGPT": 24,
+      "Claude Opus": 8,
+      "Gemini Pro": 7,
+      "Claude": 7,
+      "Claude Sonnet": 6,
+      "GPT-4o": 4,
+      "Gemini Flash": 2,
+      "gpt-4o": 1,
+      "Gemini-Pro": 1,
+      "Llama 4": 1
+    },
+    "homeworks": {
+      "HW0": 14,
+      "HW9": 14,
+      "HW10": 13,
+      "HW5": 12,
+      "HW6": 12,
+      "HW1": 11,
+      "HW8": 11,
+      "HW4": 10,
+      "HW2": 10,
+      "HW12": 10,
+      "HW3": 10,
+      "HW11": 10,
+      "HW7": 10,
+      "HW13": 7,
+      "HW08": 4,
+      "HW07": 3,
+      "Unknown": 2,
+      "HW09": 2,
+      "HW05": 1,
+      "HW02": 1,
+      "HW03": 1,
+      "HW06": 1
+    },
+    "timeline": {
+      "2025-10-01": 1,
+      "2025-10-05": 1,
+      "2025-10-07": 1,
+      "2025-10-09": 1,
+      "2025-10-11": 1,
+      "2025-10-15": 1,
+      "2025-10-18": 2,
+      "2025-10-20": 1,
+      "2025-10-26": 1,
+      "2025-10-28": 2,
+      "2025-10-29": 1,
+      "2025-10-30": 1,
+      "2025-11-03": 3,
+      "2025-11-04": 3,
+      "2025-11-05": 1,
+      "2025-11-06": 3,
+      "2025-11-07": 1,
+      "2025-11-10": 1,
+      "2025-11-12": 1,
+      "2025-11-13": 1,
+      "2025-11-14": 1,
+      "2025-11-16": 1,
+      "2025-11-17": 1,
+      "2025-11-19": 1,
+      "2025-11-23": 2,
+      "2025-11-24": 2,
+      "2025-11-27": 1,
+      "2025-11-28": 2,
+      "2025-11-29": 2,
+      "2025-11-30": 3,
+      "2025-12-01": 2,
+      "2025-12-02": 4,
+      "2025-12-03": 5,
+      "2025-12-04": 14,
+      "2025-12-05": 11,
+      "2025-12-06": 9,
+      "2025-12-07": 14,
+      "2025-12-08": 25,
+      "2025-12-09": 2,
+      "2025-12-10": 9,
+      "2025-12-11": 30
+    },
+    "top_contributors": [
+      {
+        "author": "Tom Chen",
+        "posts": 2
+      },
+      {
+        "author": "Abdelaziz Mohamed",
+        "posts": 1
+      },
+      {
+        "author": "Jacqueline Thibault",
+        "posts": 1
+      },
+      {
+        "author": "Ijin Yu",
+        "posts": 1
+      },
+      {
+        "author": "Elizabeth Weaver",
+        "posts": 1
+      },
+      {
+        "author": "Shreyes Sridhara",
+        "posts": 1
+      },
+      {
+        "author": "Martin Alvarez-Kuglen",
+        "posts": 1
+      },
+      {
+        "author": "Gabriel Han",
+        "posts": 1
+      },
+      {
+        "author": "Ben Yu",
+        "posts": 1
+      },
+      {
+        "author": "Sarvagya Somvanshi",
+        "posts": 1
+      }
+    ],
+    "model_homework_matrix": {
+      "ChatGPT": {
+        "HW4": 2,
+        "HW1": 2,
+        "HW10": 2,
+        "HW5": 4,
+        "HW6": 2,
+        "HW7": 1,
+        "HW9": 2,
+        "HW8": 2,
+        "HW08": 1,
+        "HW13": 1,
+        "HW12": 1,
+        "HW07": 1,
+        "HW2": 1,
+        "HW3": 1,
+        "HW0": 1
+      },
+      "Gemini": {
+        "HW2": 2,
+        "HW12": 1,
+        "HW10": 2,
+        "HW4": 2,
+        "HW5": 2,
+        "HW0": 2,
+        "HW9": 1,
+        "HW7": 1,
+        "HW8": 2,
+        "HW13": 2,
+        "HW6": 2,
+        "HW3": 1,
+        "HW1": 2,
+        "HW03": 1,
+        "HW08": 1,
+        "HW06": 1
+      },
+      "Claude Sonnet": {
+        "HW4": 1,
+        "HW1": 1,
+        "HW3": 1,
+        "HW0": 1,
+        "HW8": 1,
+        "HW10": 1
+      },
+      "Unknown": {
+        "HW8": 6,
+        "HW10": 5,
+        "HW0": 8,
+        "HW11": 7,
+        "HW12": 5,
+        "HW07": 2,
+        "HW2": 4,
+        "HW1": 5,
+        "HW3": 4,
+        "HW5": 5,
+        "HW6": 6,
+        "HW4": 5,
+        "Unknown": 2,
+        "HW09": 2,
+        "HW9": 8,
+        "HW7": 5,
+        "HW08": 1,
+        "HW02": 1,
+        "HW13": 2
+      },
+      "Gemini Pro": {
+        "HW3": 1,
+        "HW9": 1,
+        "HW2": 2,
+        "HW11": 1,
+        "HW1": 1,
+        "HW10": 1
+      },
+      "Claude Opus": {
+        "HW12": 1,
+        "HW7": 1,
+        "HW9": 1,
+        "HW05": 1,
+        "HW6": 1,
+        "HW0": 1,
+        "HW10": 1,
+        "HW3": 1
+      },
+      "GPT-4o": {
+        "HW0": 1,
+        "HW10": 1,
+        "HW3": 1,
+        "HW7": 1
+      },
+      "Claude": {
+        "HW12": 1,
+        "HW7": 1,
+        "HW5": 1,
+        "HW2": 1,
+        "HW6": 1,
+        "HW13": 1,
+        "HW08": 1
+      },
+      "gpt-4o": {
+        "HW13": 1
+      },
+      "Gemini-Pro": {
+        "HW9": 1
+      },
+      "Gemini Flash": {
+        "HW11": 1,
+        "HW12": 1
+      },
+      "Llama 4": {
+        "HW11": 1
+      }
+    }
+  },
+  "insights": {
+    "key_findings": [
+      "Total of 169 posts from 168 unique contributors",
+      "Most tested model: Unknown (83 posts)",
+      "Most covered assignment: HW0 (14 posts)"
+    ],
+    "model_analysis": "",
+    "homework_analysis": "",
+    "trend_analysis": "",
+    "ai_analysis": "### 1. Model Preferences and Trends\nThe data indicates a strong preference for the \"Unknown\" model, which accounts for nearly half of the submissions (49%). Among the named models, \"Gemini\" and \"ChatGPT\" are the most frequently tested, suggesting that these models are favored by students, possibly due to their popularity or perceived effectiveness in educational contexts.\n\n### 2. Homework Assignment Coverage Patterns\nHomework assignments HW0 and HW9 lead in submissions, each receiving 14 posts, indicating they may be key focus areas for students. In contrast, less common assignments like HW13 and HW08 have notably fewer submissions (7 and 4 respectively), which may suggest a lack of clarity or interest in these specific tasks.\n\n### 3. Overall Participation Patterns\nThe total of 169 posts reflects a moderate level of engagement among students, with only a handful of contributors, the top being Tom Chen with 2 posts. This concentrated participation suggests that a small group of students is driving most of the content, which may indicate either a lack of broader engagement or challenges in motivating more students to contribute."
+  }
+}
